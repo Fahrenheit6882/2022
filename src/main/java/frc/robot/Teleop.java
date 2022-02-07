@@ -7,11 +7,11 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 
 public class Teleop {
-    private  final PWMSparkMax m_leftDrive = new PWMSparkMax(0);
-    private  final PWMSparkMax m_rightDrive = new PWMSparkMax(1);
-    private  final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
-    private  final Joystick m_stick = new Joystick(0);
-    private  final Timer m_timer = new Timer();
+    private static final PWMSparkMax m_leftDrive = new PWMSparkMax(0);
+    private static final PWMSparkMax m_rightDrive = new PWMSparkMax(1);
+    private static final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
+    private static final Joystick m_stick = new Joystick(0);
+    private static final Timer m_timer = new Timer();
 
      /** This function is run once each time the robot enters Teleop mode. */
     public static void teleopInit()
@@ -28,7 +28,7 @@ public class Teleop {
 
     /** This function is called periodically during Teleop. */
     public static void teleopPeriodic()
-    {
+      {
         //myButton.toggleWhenPressed(new StartEndCommand(mySubsystem::onMethod, mySubsystem::offMethod, mySubsystem));
 
       }
