@@ -12,12 +12,13 @@ import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 
 public class Teleop {
  
-    private static final VictorSPX m_leftDrive  = new VictorSPX (0);
+    private static final VictorSPX m_leftDrive = new VictorSPX (0);
     private static final VictorSPX m_rightDrive = new VictorSPX(1);
     private static final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
     private static final Joystick m_stick = new Joystick(0);
     private static final Timer m_timer = new Timer();
-
+  
+    
      /** This function is run once each time the robot enters Teleop mode. */
     public static void teleopInit()
     {
