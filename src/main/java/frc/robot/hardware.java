@@ -18,10 +18,14 @@ public class hardware
     /**
      * Motor Controllers
      */
-    
+
 
      /**
       * Sensors
       */
     
+      public static void init()
+      {
+          driveController = new Joystick(2);
+      }
 }
