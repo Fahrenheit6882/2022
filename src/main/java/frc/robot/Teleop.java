@@ -1,6 +1,5 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.Timer;
 
 public class Teleop {
   
@@ -15,7 +14,14 @@ public class Teleop {
     public static void teleopPeriodic()
       {
         //myButton.toggleWhenPressed(new StartEndCommand(mySubsystem::onMethod, mySubsystem::offMethod, mySubsystem));
-
+        //when button A (1) is pressed ==> print out LY and RY axis
+        if(hardware.driveController.getRawButtonPressed(1))
+        {
+          double LYaxis = hardware.driveController.getRawAxis(9);
+          double RYaxis = hardware.driveController.getRawAxis(9);
+          System.out.println(LYaxis);
+          System.out.println(RYaxis);
+        }
       }
     }
 
