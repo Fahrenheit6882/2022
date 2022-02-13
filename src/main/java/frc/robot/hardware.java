@@ -8,5 +8,6 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class hardware 
 {
+    public static Joystick driveController;
     // Use this Class for keeping hardware declarations in one place.  :)   
 }
