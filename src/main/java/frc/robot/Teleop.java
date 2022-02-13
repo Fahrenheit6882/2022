@@ -17,8 +17,8 @@ public class Teleop {
         //when button A (1) is pressed ==> print out LY and RY axis
         if(hardware.driveController.getRawButtonPressed(1))
         {
-          double LYaxis = hardware.driveController.getRawAxis(9);
-          double RYaxis = hardware.driveController.getRawAxis(9);
+          double LYaxis = hardware.driveController.getRawAxis(1);
+          double RYaxis = hardware.driveController.getRawAxis(5);
           System.out.println(LYaxis);
           System.out.println(RYaxis);
         }
