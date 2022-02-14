@@ -6,7 +6,7 @@ public class Drive {
 private PWMVictorSPX leftMotorControler;
 private PWMVictorSPX rightMotorControler;
 
-void drive(double leftSpeed, double rightSpeed)
+Drive(double leftSpeed, double rightSpeed)
 {
     leftMotorControler = leftSpeed;
     rightMotorControler = rightSpeed;
