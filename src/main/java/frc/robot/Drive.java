@@ -9,4 +9,6 @@ private PWMVictorSPX rightMotor;
 {
 
 }
+
+public Drive()
 }
