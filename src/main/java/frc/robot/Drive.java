@@ -8,8 +8,8 @@ private PWMVictorSPX rightMotorControler = new PWMVictorSPX(2); //ports 2 and 3
 
 Drive(double leftSpeed, double rightSpeed)
 {
-    leftMotorControler = leftSpeed;
-    rightMotorControler = rightSpeed;
+    leftMotorControler.set(leftSpeed);
+    rightMotorControler.set(rightSpeed);
 }
 
 }
