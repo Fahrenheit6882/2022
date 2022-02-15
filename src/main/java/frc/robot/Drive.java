@@ -12,4 +12,8 @@ Drive(double leftSpeed, double rightSpeed)
     rightMotorControler.set(rightSpeed);
 }
 
+public void Stop(double leftSpeed, double rightSpeed)
+{
+    
+}
 }
