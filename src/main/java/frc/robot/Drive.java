@@ -23,7 +23,7 @@ public void Stop(double leftSpeed, double rightSpeed)
 {
     leftSpeed = 0;
     rightSpeed = 0;
-    leftMotorControler.set(leftSpeed);
-    rightMotorControler.set(rightSpeed);
+    leftMotor.set(leftSpeed);
+    rightMotor.set(rightSpeed);
 }
 }
