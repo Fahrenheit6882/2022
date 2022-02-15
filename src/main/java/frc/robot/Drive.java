@@ -1,20 +1,21 @@
 package frc.robot;
-import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
+import com.ctre.phoenix.motorcontrol.VictorSPXControlMode;
+import com.ctre.phoenix.motorcontrol.can.*;
 
 /**
  * COMMENT YOUR CODE!!!!!!!!!!!!!!! In future, I refuse to review any code that is not commented. - Cassie
  */
 public class Drive {
     //declaring variables for left and right motors
-    private PWMVictorSPX leftMotor;
-    private PWMVictorSPX rightMotor;
+    private VictorSPX leftMotor;
+    private VictorSPX rightMotor;
 
     /**
      * Constructor for a tank drive
      * @param leftMotorControler reference to motor controller for left side of bot
      * @param rightMotorControler reference to motor controller for right side of bot
      */
-    Drive(PWMVictorSPX leftMotorControler, PWMVictorSPX rightMotorControler)
+    Drive(VictorSPX leftMotorControler, VictorSPX rightMotorControler)
     {
         // Use the parameters passed to initialize the motor controllers of the bot
         this.leftMotor = leftMotorControler;
@@ -33,8 +34,8 @@ public class Drive {
          * What would happen if you sent a value to one of the parameters that is outside the bounds
          * of acceptable values?  Recommend doing some 
          */
-        leftMotor.set(leftSpeed);
-        rightMotor.set(rightSpeed);
+        leftMotor.set(VictorSPXControlMode.PercentOutput, leftSpeed);
+        rightMotor.set(VictorSPXControlMode.PercentOutput, rightSpeed);
     }
 
 
