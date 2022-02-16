@@ -7,7 +7,7 @@ import com.ctre.phoenix.motorcontrol.can.*;
  */
 public class Drive {
     //declaring variables for left and right motors
-    private VictorSPX leftMotor;
+    private VictorSPX leftMotor; 
     private VictorSPX rightMotor;
 
     /**
@@ -34,6 +34,7 @@ public class Drive {
          * What would happen if you sent a value to one of the parameters that is outside the bounds
          * of acceptable values?  Recommend doing some 
          */
+        if(leftSpeed<=5.0 && leftSpeed )
         leftMotor.set(VictorSPXControlMode.PercentOutput, leftSpeed);
         rightMotor.set(VictorSPXControlMode.PercentOutput, rightSpeed);
     }
