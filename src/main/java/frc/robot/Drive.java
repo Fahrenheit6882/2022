@@ -7,15 +7,15 @@ import com.ctre.phoenix.motorcontrol.can.*;
  */
 public class Drive {
     //declaring variables for left and right motors
-    private VictorSPX leftMotor; 
-    private VictorSPX rightMotor;
+    private WPI_VictorSPX leftMotor; 
+    private WPI_VictorSPX rightMotor;
 
     /**
      * Constructor for a tank drive
      * @param leftMotorControler reference to motor controller for left side of bot
      * @param rightMotorControler reference to motor controller for right side of bot
      */
-    Drive(VictorSPX leftMotorControler, VictorSPX rightMotorControler)
+    Drive(WPI_VictorSPX leftMotorControler, WPI_VictorSPX rightMotorControler)
     {
         // Use the parameters passed to initialize the motor controllers of the bot
         this.leftMotor = leftMotorControler;
@@ -34,9 +34,14 @@ public class Drive {
          * What would happen if you sent a value to one of the parameters that is outside the bounds
          * of acceptable values?  Recommend doing some 
          */
-        if(leftSpeed<=5.0 && leftSpeed )
+        if(leftSpeed <= 5.0 && leftSpeed >= -5.0)
+        {
         leftMotor.set(VictorSPXControlMode.PercentOutput, leftSpeed);
+        }
+        if(rightSpeed <= 5.0 && rightSpeed >= -5.0)
+        {
         rightMotor.set(VictorSPXControlMode.PercentOutput, rightSpeed);
+        }
     }
 
 

@@ -11,8 +11,10 @@ public class hardware
     /**
      * Joysticks
      */
-    public static Joystick driveController;
-
+    private static Joystick drivergamepad = new Joystick(2);
+    private static Joystick operatorGamepad = new Joystick(1);
+    
+    
     /**
      * Motor Controllers
      */
@@ -25,6 +27,6 @@ public class hardware
       public static void init()
       {
           driveController = new Joystick(2);
-          drive = new Drive(new VictorSPX(0), new VictorSPX(1)); //example of initializing Drive variable
+          drive = new Drive(new WPI_VictorSPX(0), new WPI_VictorSPX(1)); //example of initializing Drive variable
       }
 }
