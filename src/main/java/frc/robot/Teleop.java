@@ -14,7 +14,10 @@ public class Teleop {
     public static void teleopPeriodic()
       {
         //myButton.toggleWhenPressed(new StartEndCommand(mySubsystem::onMethod, mySubsystem::offMethod, mySubsystem));
-        //when button A (1) is pressed ==> print out LY and RY axis
+        //in Teleop, call the Drive.drive method using the Joystick
+        //axis parameters that will control either side of the drive train. 
+        //Remember to multiply by -1 so that pushing the Joystick forward will
+        // give a +1 to the drive function, per our discussion yesterday
         if(hardware.driveController.getRawButtonPressed(1))
         {
           double LYaxis = hardware.driveController.getRawAxis(1);

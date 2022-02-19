@@ -13,12 +13,14 @@ public class hardware
      */
     private static Joystick drivergamepad = new Joystick(2);
     private static Joystick operatorGamepad = new Joystick(1);
-    
+    //motor controlers for declaring the drive constructor 
+    private WPI_VictorSPX leftMotor; 
+    private WPI_VictorSPX rightMotor;
     
     /**
      * Motor Controllers
      */
-    public static Drive drive; //example of declaring an instances of the Drive class
+    public static Drive drive(leftMotor, rightMotor); //declears drive? i thought we did this in drive.java
 
      /**
       * Sensors
@@ -26,7 +28,7 @@ public class hardware
     
       public static void init()
       {
-          driveController = new Joystick(2);
+          Joystick driveController = new Joystick(2);
           drive = new Drive(new WPI_VictorSPX(0), new WPI_VictorSPX(1)); //example of initializing Drive variable
       }
 }
