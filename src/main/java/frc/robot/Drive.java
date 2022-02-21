@@ -1,4 +1,5 @@
 package frc.robot;
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.VictorSPXControlMode;
 import com.ctre.phoenix.motorcontrol.can.*;
 
@@ -34,27 +35,37 @@ public class Drive {
          * What would happen if you sent a value to one of the parameters that is outside the bounds
          * of acceptable values?  Recommend doing some 
          */
-        if(leftSpeed <= 5.0 && leftSpeed >= -5.0)
+        if(leftSpeed > 1.0)
         {
-        leftMotor.set(VictorSPXControlMode.PercentOutput, leftSpeed);
+            leftSpeed = 1.0;
         }
-        if(rightSpeed <= 5.0 && rightSpeed >= -5.0)
+        else if(leftSpeed < -1.0)
         {
-        rightMotor.set(VictorSPXControlMode.PercentOutput, rightSpeed);
+            leftSpeed = -1.0;
         }
+
+        if(rightSpeed > 1.0)
+        {
+            rightSpeed = 1.0;
+        }
+        else if(rightSpeed < -1.0)
+        {
+            rightSpeed = -1.0;
+        }
+
+
+        leftMotor.set(ControlMode.PercentOutput, leftSpeed);
+        rightMotor.set(ControlMode.PercentOutput, rightSpeed);
     }
 
 
-    public void Stop(double leftSpeed, double rightSpeed)
+    public void stop()
     {
         /**
          * HINT: You don't need parameters for this method.
          * You are ALWAYS setting both left and right to 0.
          * You can do this by simply calling this.drive(0.0, 0.0)
          */
-        leftSpeed = 0;
-        rightSpeed = 0;
-        leftMotor.set(leftSpeed);
-        rightMotor.set(rightSpeed);
+        drive(0, 0);
     }
 }

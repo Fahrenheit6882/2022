@@ -11,8 +11,8 @@ public class hardware
     /**
      * Joysticks
      */
-    private static Joystick drivergamepad = new Joystick(2);
-    private static Joystick operatorGamepad = new Joystick(1);
+    //private static Joystick drivecContorller = new Joystick(1); (for use if we need to use other controller. check for port number in frc drive station)
+    public static Joystick driveController;
     //motor controlers for declaring the drive constructor 
     private WPI_VictorSPX leftMotor; 
     private WPI_VictorSPX rightMotor;
@@ -20,7 +20,7 @@ public class hardware
     /**
      * Motor Controllers
      */
-    public static Drive drive(leftMotor, rightMotor); //declears drive? i thought we did this in drive.java
+    public static Drive drive; //declears drive? i thought we did this in drive.java
 
      /**
       * Sensors
@@ -28,7 +28,7 @@ public class hardware
     
       public static void init()
       {
-          Joystick driveController = new Joystick(2);
+          driveController = new Joystick(2);
           drive = new Drive(new WPI_VictorSPX(0), new WPI_VictorSPX(1)); //example of initializing Drive variable
       }
 }
