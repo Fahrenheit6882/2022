@@ -13,9 +13,6 @@ public class hardware
      */
     //private static Joystick drivecContorller = new Joystick(1); (for use if we need to use other controller. check for port number in frc drive station)
     public static Joystick driveController;
-    //motor controlers for declaring the drive constructor 
-    private WPI_VictorSPX leftMotor; 
-    private WPI_VictorSPX rightMotor;
     
     /**
      * Motor Controllers
@@ -29,6 +26,10 @@ public class hardware
       public static void init()
       {
           driveController = new Joystick(2);
-          drive = new Drive(new WPI_VictorSPX(0), new WPI_VictorSPX(1)); //example of initializing Drive variable
+
+          // Set up drive train
+          WPI_VictorSPX rc = new WPI_VictorSPX(1);
+          rc.setInverted(true);
+          drive = new Drive(new WPI_VictorSPX(0),  rc); //example of initializing Drive variable
       }
 }

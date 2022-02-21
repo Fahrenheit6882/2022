@@ -11,6 +11,9 @@ public class Drive {
     private WPI_VictorSPX leftMotor; 
     private WPI_VictorSPX rightMotor;
 
+    // set a speedFactor
+    double speedFactor = 0.4;
+
     /**
      * Constructor for a tank drive
      * @param leftMotorControler reference to motor controller for left side of bot
@@ -54,8 +57,8 @@ public class Drive {
         }
 
 
-        leftMotor.set(ControlMode.PercentOutput, leftSpeed);
-        rightMotor.set(ControlMode.PercentOutput, rightSpeed);
+        leftMotor.set(ControlMode.PercentOutput, leftSpeed * speedFactor);
+        rightMotor.set(ControlMode.PercentOutput, rightSpeed * speedFactor);
     }
 
 
