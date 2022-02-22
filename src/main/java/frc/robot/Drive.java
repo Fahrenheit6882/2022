@@ -11,8 +11,9 @@ public class Drive {
     private WPI_VictorSPX leftMotor; 
     private WPI_VictorSPX rightMotor;
 
-    // set a speedFactor
-    double speedFactor = 0.4;
+    // speedFactor set up
+    int currentFactor = 0;
+    double[] speedFactors = {0.1, 0.4, 0.8, 0.5};
 
     /**
      * Constructor for a tank drive
@@ -34,9 +35,7 @@ public class Drive {
     public void drive(double leftSpeed, double rightSpeed)
     {
         /**
-         * HINT:
-         * What would happen if you sent a value to one of the parameters that is outside the bounds
-         * of acceptable values?  Recommend doing some 
+         * enforces the legal limit of left/right speeds
          */
         if(leftSpeed > 1.0)
         {
@@ -56,19 +55,25 @@ public class Drive {
             rightSpeed = -1.0;
         }
 
-
-        leftMotor.set(ControlMode.PercentOutput, leftSpeed * speedFactor);
-        rightMotor.set(ControlMode.PercentOutput, rightSpeed * speedFactor);
+        // sends the speed to the motor controllers 
+        leftMotor.set(ControlMode.PercentOutput, leftSpeed * speedFactors[currentFactor]);
+        rightMotor.set(ControlMode.PercentOutput, rightSpeed * speedFactors[currentFactor]);
     }
 
 
     public void stop()
     {
-        /**
-         * HINT: You don't need parameters for this method.
-         * You are ALWAYS setting both left and right to 0.
-         * You can do this by simply calling this.drive(0.0, 0.0)
-         */
+        // use drive to set motor speeds to 0
         drive(0, 0);
+    }
+
+    public void changeSpeed()
+    {
+        currentFactor += 1;
+
+        if(currentFactor > speedFactors.length)
+        {
+            currentFactor = 0;
+        }
     }
 }
