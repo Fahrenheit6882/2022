@@ -26,6 +26,9 @@ public class Drive {
         this.rightMotor = rightMotorControler;
     }
 
+    public Drive() {
+    }
+
     /**
      * This drive method is used to set the desired speed of each side of a tank drive.
      * @param leftSpeed desired speed of left side of drive.  Accepted values: -1 to +1
