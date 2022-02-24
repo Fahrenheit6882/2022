@@ -14,18 +14,19 @@ public class Auto
 
     public static void autoPeriodic()
     {
+        //create and object for driving in auto
+        Drive autoDrive = new Drive(); //I'm stuck on this error here
         if(start == false)
-        {
+        { //starts time only once
             autoTimer.start();
             start = true;
         }
-
-        if (autoTimer.get() >= 2.0)
+        //this lets it run for five-ish seconds where the robot goes forward at speed five and the hopefully stops
+        if (autoTimer.get() <= 5.0)
         {
-            autoTimer.stop();
-            System.out.println("Timer has stopped");
+            autoDrive.drive(0.5, 0.5);
         }
-        
+        //I might need a line of code to stop the motors? I don't know for sure though
     }
     
 }
