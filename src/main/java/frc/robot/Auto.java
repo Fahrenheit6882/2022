@@ -20,16 +20,16 @@ public class Auto
             autoTimer.start();
             started = true;
         }
-        //this lets it run for five-ish seconds where the robot goes forward at speed five and the hopefully stops
+        //this lets it run for five-ish seconds where the robot goes forward at speed five
         if (autoTimer.get() <= 5.0)
         {
             hardware.drive.drive(0.5, 0.5);
         }
-        else
+        else //stops the motors when timer is more than five seconds
         {
             hardware.drive.stop();
         }
-        //I might need a line of code to stop the motors? I don't know for sure though
+       
     }
     
 }
