@@ -23,11 +23,11 @@ public class Auto
         //this lets it run for five-ish seconds where the robot goes forward at speed five
         if (autoTimer.get() <= 1.5)
         {
-            hardware.drive.drive(0.5, 0.6);
+            //hardware.drive.drive(0.5, 0.6);
         }
         else //stops the motors when timer is more than 1.5 seconds
         {
-            hardware.drive.stop();
+           // hardware.drive.stop();
         }
         /**after the timer is past 1.5 it will turn for .4 seconds (change turn time or speeds to adjust angle) and stop all motors*/
         if (autoTimer.get() >= 1.5 && autoTimer.get() <= 1.9) 
