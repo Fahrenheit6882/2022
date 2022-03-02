@@ -18,7 +18,10 @@ public class hardware
      * Motor Controllers
      */
     public static Drive drive; //declears drive? i thought we did this in drive.java
-
+    /**
+     * Switches (not sure how to declare)
+     */
+    public static autoEdgeStart switch; 
      /**
       * Sensors
       */
