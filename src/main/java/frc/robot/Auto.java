@@ -30,9 +30,9 @@ public class Auto
            // hardware.drive.stop();
         }
         /**after the timer is past 1.5 it will turn for .4 seconds (change turn time or speeds to adjust angle) and stop all motors*/
-        if (autoTimer.get() >= 1.5 && autoTimer.get() <= 1.9) 
+        if (autoTimer.get() >= 1.5 && autoTimer.get() <= 2.5) 
         {
-            hardware.drive.drive(-0.5, 0.6);
+            hardware.drive.drive(-0.6, 0.7);
         }
         else //stops motors after timer reaches 1.9 seconds or more
         {
