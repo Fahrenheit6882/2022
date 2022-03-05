@@ -6,6 +6,9 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Servo;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
+
 public class hardware 
 {
     // Use this Class for keeping hardware declarations in one place.  :)   
@@ -18,7 +21,7 @@ public class hardware
     /**
      * Motor Controllers
      */
-    public static Drive drive; //declears drive? i thought we did this in drive.java
+    public static Drive drive; 
     /**
      * Switches 
      */
@@ -29,6 +32,10 @@ public class hardware
       * Servos
       */
     public static Servo plowRelease= new Servo(0);
+    /**
+     * camera
+     */
+    public static int currentCamera = 1;
     
       public static void init()
       {
@@ -37,5 +44,15 @@ public class hardware
           WPI_VictorSPX rc = new WPI_VictorSPX(1);
           rc.setInverted(true);
           drive = new Drive(new WPI_VictorSPX(0),  rc); //example of initializing Drive variable
+      }
+
+      public static void ViewCamera(int camID)
+      {
+          NetworkTableInstance.getDefault().getEntry("yeah").setDouble((double) camID);
+      }
+
+      public static void Camera()
+      {
+        ViewCamera(currentCamera);
       }
 }

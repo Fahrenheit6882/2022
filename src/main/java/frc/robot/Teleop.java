@@ -1,5 +1,6 @@
 package frc.robot;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 public class Teleop {
   
@@ -8,6 +9,7 @@ public class Teleop {
     public static void teleopInit()
     {
       hardware.plowRelease.set(-90.0);
+      
     }
 
     /** This function is called periodically during Teleop. */
@@ -17,7 +19,7 @@ public class Teleop {
        if(hardware.driveController.getRawButtonPressed(constants.BtnA))
        {
         System.out.println(hardware.positionHolder);
-       }
+       }        
 
         // Add code to drive based on driver input
         hardware.drive.drive(hardware.driveController.getRawAxis(constants.AxisLY) * -1.0, hardware.driveController.getRawAxis(constants.AxisRY) * -1.0);
@@ -27,6 +29,13 @@ public class Teleop {
         {
           hardware.drive.changeSpeed();
         }
+
+        //buttons back and start pressed together will toggle climb go up or down
+        if(hardware.driveController.getRawButtonPressed(7) && hardware.driveController.getRawButtonPressed(8))
+        {
+          WPI_VictorSPX climbMotorCtrl = new WPI_VictorSPX();
+        }
+
       }
     }
 

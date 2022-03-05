@@ -53,7 +53,20 @@ public class Auto
 
          } else if(hardware.positionHolder == false)
             {
-
+                if(started == false)
+                { //starts time only once
+                    autoTimer.start();
+                    started = true;
+                }
+                //this lets it run for five-ish seconds where the robot goes forward at speed five/6
+                if (autoTimer.get() <= 1.5)
+                {
+                    hardware.drive.drive(0.5, 0.6);
+                }
+                else //stops the motors when timer is more than 1.5 seconds
+                {
+                    hardware.drive.stop();
+                }
             }
 
     }
