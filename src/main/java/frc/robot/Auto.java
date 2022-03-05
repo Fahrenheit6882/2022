@@ -15,8 +15,8 @@ public class Auto
 
     public static void autoPeriodic()
     {
-        if(hardware.autoEdgeStart.get()==high)
-        {
+   //     if(hardware.autoEdgeStart.get()==high)
+     //   {
             if(started == false)
             { //starts time only once
                 autoTimer.start();
@@ -41,7 +41,7 @@ public class Auto
                 hardware.drive.stop();
         }
 
-    }
+    //}
     }
     
 }

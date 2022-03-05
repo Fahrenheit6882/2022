@@ -14,7 +14,6 @@ public class hardware
      */
     //private static Joystick drivecContorller = new Joystick(1); (for use if we need to use other controller. check for port number in frc drive station)
     public static Joystick driveController;
-    
     /**
      * Motor Controllers
      */
@@ -22,11 +21,11 @@ public class hardware
     /**
      * Switches (not sure how to declare)
      */
-    public static autoEdgeStart switch; 
+ //   public static autoEdgeStart switch; 
      /**
       * Servo
       */
-    public static Servo plowRelease = null;
+    public static Servo plowRelease= new Servo(0);
     
       public static void init()
       {
