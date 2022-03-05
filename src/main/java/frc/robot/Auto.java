@@ -11,7 +11,6 @@ public class Auto
     {
         autoTimer.reset ();
         hardware.plowRelease.setAngle(90.0);
-        System.out.println(hardware.autoSwitch.get());
     }
 
     public static void autoPeriodic()
@@ -40,6 +39,12 @@ public class Auto
             else //stops motors after timer reaches 1.9 seconds or more
             {
                 hardware.drive.stop();
+            
+                // to print out the switch position
+            if(hardware.driveController.getRawButtonPressed(constants.BtnA))
+            {
+                System.out.println(hardware.autoSwitch.get());
+            }
         }
 
     //}
