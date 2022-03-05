@@ -23,6 +23,8 @@ public class hardware
      * Switches 
      */
     public static DigitalInput autoSwitch = new DigitalInput(9);
+    //switch position holder
+    public static boolean positionHolder = autoSwitch.get();
      /**
       * Servos
       */

@@ -11,6 +11,7 @@ public class Auto
     {
         autoTimer.reset ();
         hardware.plowRelease.setAngle(90.0);
+        
     }
 
     public static void autoPeriodic()
@@ -41,11 +42,7 @@ public class Auto
             {
                 hardware.drive.stop();             
             }
-             // to print out the switch position
-            if(hardware.driveController.getRawButtonPressed(constants.BtnA))
-            {
-                System.out.println(hardware.autoSwitch.get());
-            }
+
     //}
     }
     
