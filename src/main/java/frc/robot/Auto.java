@@ -39,15 +39,13 @@ public class Auto
             }
             else //stops motors after timer reaches 1.9 seconds or more
             {
-                hardware.drive.stop();
-            
-                // to print out the switch position
+                hardware.drive.stop();             
+            }
+             // to print out the switch position
             if(hardware.driveController.getRawButtonPressed(constants.BtnA))
             {
                 System.out.println(hardware.autoSwitch.get());
             }
-        }
-
     //}
     }
     
