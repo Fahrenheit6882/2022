@@ -7,7 +7,7 @@ public class Teleop {
      /** This function is run once each time the robot enters Teleop mode. */
     public static void teleopInit()
     {
-      
+      hardware.plowRelease.set(-90.0);
     }
 
     /** This function is called periodically during Teleop. */

@@ -17,6 +17,7 @@ public class Auto
     {
      //if(hardware.autoEdgeStart.get()==high)
        //{
+           
             if(started == false)
             { //starts time only once
                 autoTimer.start();
