@@ -16,9 +16,8 @@ public class Auto
 
     public static void autoPeriodic()
     {
-     //if(hardware.autoEdgeStart.get()==high)
-       //{
-           
+     if(hardware.positionHolder == true) //closest to edge starting position
+       {
             if(started == false)
             { //starts time only once
                 autoTimer.start();
@@ -33,7 +32,7 @@ public class Auto
             {
                 hardware.drive.stop();
             }
-            //after the timer is past 1.5 it will turn for .4 seconds (change turn time or speeds to adjust angle) and stop all motors
+            //after the timer is past 1.5 it will turn for 1 second (change turn time or speeds to adjust angle) and stop all motors
             if (autoTimer.get() >= 1.5 && autoTimer.get() <= 2.5) 
             {
                 hardware.drive.drive(-0.8, 0.9);
@@ -42,8 +41,21 @@ public class Auto
             {
                 hardware.drive.stop();             
             }
+            //will drive forward for .7 seconds
+            if(autoTimer.get() >=2.5 && autoTimer.get() <=3.2 )
+            {
+                hardware.drive.drive(0.5, 0.6);
+            }
+            else
+            {
+                hardware.drive.stop();
+            }
 
-    //}
+         } else if(hardware.positionHolder == false)
+            {
+
+            }
+
     }
     
 }
