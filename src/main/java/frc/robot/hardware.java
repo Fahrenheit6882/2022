@@ -5,9 +5,7 @@ import com.ctre.phoenix.motorcontrol.can.*;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Servo;
-
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.cscore.UsbCamera;
 
 public class hardware 
 {
@@ -35,7 +33,7 @@ public class hardware
     /**
      * camera
      */
-    public static int currentCamera = 1;
+    public static UsbCamera pOVCamera = new UsbCamera("driverCamera", 0);
     
       public static void init()
       {
@@ -46,13 +44,7 @@ public class hardware
           drive = new Drive(new WPI_VictorSPX(0),  rc); //example of initializing Drive variable
       }
 
-      public static void ViewCamera(int camID)
-      {
-          NetworkTableInstance.getDefault().getEntry("yeah").setDouble((double) camID);
-      }
 
-      public static void Camera()
-      {
-        ViewCamera(currentCamera);
-      }
+
+
 }
