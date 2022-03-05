@@ -17,7 +17,7 @@ public class Teleop {
        if(hardware.driveController.getRawButtonPressed(constants.BtnA))
        {
         System.out.println(hardware.positionHolder);
-       }        
+       }
 
         // Add code to drive based on driver input
         hardware.drive.drive(hardware.driveController.getRawAxis(constants.AxisLY) * -1.0, hardware.driveController.getRawAxis(constants.AxisRY) * -1.0);
