@@ -32,10 +32,9 @@ public class Teleop {
 
         //buttons back and start pressed together will toggle climb go up or down
         if(hardware.driveController.getRawButtonPressed(7) && hardware.driveController.getRawButtonPressed(8))
-        {
-         
-        }
+        { 
 
-      }
+        }
     }
+  }
 

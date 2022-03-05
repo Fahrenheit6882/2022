@@ -20,6 +20,7 @@ public class hardware
      * Motor Controllers
      */
     public static Drive drive; 
+    public static WPI_VictorSPX climbMotorCtrl = new WPI_VictorSPX(2);
     /**
      * Switches 
      */
@@ -33,7 +34,7 @@ public class hardware
     /**
      * camera
      */
-    public static UsbCamera pOVCamera = new UsbCamera("driverCamera", 0);
+   // public static UsbCamera pOVCamera = new UsbCamera("driverCamera", 0);
     
       public static void init()
       {

@@ -24,7 +24,7 @@ public class Auto
                 started = true;
             }
             //this lets it run for five-ish seconds where the robot goes forward at speed five/6
-            if (autoTimer.get() <= 1.5)
+            if (autoTimer.get() <= 5.0)
             {
                 hardware.drive.drive(0.5, 0.6);
             }
@@ -33,7 +33,7 @@ public class Auto
                 hardware.drive.stop();
             }
             //after the timer is past 1.5 it will turn for 1 second (change turn time or speeds to adjust angle) and stop all motors
-            if (autoTimer.get() >= 1.5 && autoTimer.get() <= 2.5) 
+            if (autoTimer.get() >= 5.0 && autoTimer.get() <= 6.0) 
             {
                 hardware.drive.drive(-0.8, 0.9);
             }
@@ -42,7 +42,7 @@ public class Auto
                 hardware.drive.stop();             
             }
             //will drive forward for .7 seconds
-            if(autoTimer.get() >=2.5 && autoTimer.get() <=3.2 )
+            if(autoTimer.get() >= 6.0 && autoTimer.get() <= 6.7)
             {
                 hardware.drive.drive(0.5, 0.6);
             }

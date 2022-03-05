@@ -62,6 +62,19 @@ public class Drive {
         rightMotor.set(ControlMode.PercentOutput, rightSpeed * speedFactors[currentFactor]);
     }
 
+    public void singleDrive (double speed)
+    {
+        if(speed > 1.0)
+        {
+            speed = 1.0;
+        }
+        else if(speed < -1.0)
+        {
+            speed = -1.0;
+        }
+        hardware.climbMotorCtrl.set(speed);
+    }
+
 
     public void stop()
     {

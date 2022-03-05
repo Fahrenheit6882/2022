@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.cameraserver.CameraServer;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -25,6 +26,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     hardware.init();
+    CameraServer.startAutomaticCapture();
   }
 
   /**
