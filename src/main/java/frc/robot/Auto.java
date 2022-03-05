@@ -11,18 +11,19 @@ public class Auto
     {
         autoTimer.reset ();
         hardware.plowRelease.setAngle(90.0);
+        System.out.println(hardware.autoSwitch.get());
     }
 
     public static void autoPeriodic()
     {
-   //     if(hardware.autoEdgeStart.get()==high)
-     //   {
+     //if(hardware.autoEdgeStart.get()==high)
+       //{
             if(started == false)
             { //starts time only once
                 autoTimer.start();
                 started = true;
             }
-            //this lets it run for five-ish seconds where the robot goes forward at speed five
+            //this lets it run for five-ish seconds where the robot goes forward at speed five/6
             if (autoTimer.get() <= 1.5)
             {
                 hardware.drive.drive(0.5, 0.6);
@@ -31,7 +32,7 @@ public class Auto
             {
                 hardware.drive.stop();
             }
-            /**after the timer is past 1.5 it will turn for .4 seconds (change turn time or speeds to adjust angle) and stop all motors*/
+            //after the timer is past 1.5 it will turn for .4 seconds (change turn time or speeds to adjust angle) and stop all motors
             if (autoTimer.get() >= 1.5 && autoTimer.get() <= 2.5) 
             {
                 hardware.drive.drive(-0.8, 0.9);

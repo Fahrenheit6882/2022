@@ -2,6 +2,7 @@ package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.*;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Servo;
 
@@ -19,18 +20,17 @@ public class hardware
      */
     public static Drive drive; //declears drive? i thought we did this in drive.java
     /**
-     * Switches (not sure how to declare)
+     * Switches 
      */
- //   public static autoEdgeStart switch; 
+    public static DigitalInput autoSwitch = new DigitalInput(9);
      /**
-      * Servo
+      * Servos
       */
     public static Servo plowRelease= new Servo(0);
     
       public static void init()
       {
           driveController = new Joystick(2);
-
           // Set up drive train
           WPI_VictorSPX rc = new WPI_VictorSPX(1);
           rc.setInverted(true);
