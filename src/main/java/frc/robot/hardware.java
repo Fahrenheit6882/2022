@@ -3,6 +3,7 @@ package frc.robot;
 import com.ctre.phoenix.motorcontrol.can.*;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Servo;
 
 public class hardware 
 {
@@ -23,8 +24,9 @@ public class hardware
      */
     public static autoEdgeStart switch; 
      /**
-      * Sensors
+      * Servo
       */
+    public static Servo plowRelease = null;
     
       public static void init()
       {

@@ -10,6 +10,7 @@ public class Auto
     public static void autoInit()
     {
         autoTimer.reset ();
+        hardware.plowRelease.setAngle(90.0);
     }
 
     public static void autoPeriodic()
