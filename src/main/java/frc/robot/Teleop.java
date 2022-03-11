@@ -1,10 +1,9 @@
 package frc.robot;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
 
 public class Teleop {
-  
-    
+
      /** This function is run once each time the robot enters Teleop mode. */
     public static void teleopInit()
     {
@@ -30,11 +29,36 @@ public class Teleop {
           hardware.drive.changeSpeed();
         }
 
-        //buttons back and start pressed together will toggle climb go up or down
-        if(hardware.driveController.getRawButtonPressed(7) && hardware.driveController.getRawButtonPressed(8))
-        { 
+        if(hardware.driveController.getRawButtonPressed(7))
+        {hardware.climbMotorCtrl.set(.40);}
+        else if (hardware.driveController.getRawButtonReleased(7))
+        {hardware.climbMotorCtrl.set(0);}
+        else if (hardware.driveController.getRawButtonPressed(8))
+        {hardware.climbMotorCtrl.set(-.40);}
+        else if (hardware.driveController.getRawButtonReleased(8))
+        {hardware.climbMotorCtrl.set(0);}
+//        else {hardware.climbMotorCtrl.stopMotor();}
 
+        /*
+
+
+        //buttons back and start pressed together will toggle climb go up or down
+        if(hardware.driveController.getRawButtonPressed(7))
+        { 
+          if(started == false)
+          { //starts time only once
+              teleopTimer.start();
+              started = true;
+          }
+        if(teleopTimer.get() <= 0.5)
+        {
+         hardware.climbMotorCtrl.set(0.4);
         }
+        else if (teleopTimer.get() >= 0.5)
+        {
+          hardware.climbMotorCtrl.stopMotor();
+        }
+        } */
     }
   }
 

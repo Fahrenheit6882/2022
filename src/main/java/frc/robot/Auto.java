@@ -26,9 +26,10 @@ public class Auto
             //this lets it run for five-ish seconds where the robot goes forward at speed five/6
             if (autoTimer.get() <= 5.0)
             {
-                hardware.drive.drive(0.5, 0.6);
+                hardware.drive.drive(0.9, 1.0);
+                System.out.println("one");
             }
-            else //stops the motors when timer is more than 1.5 seconds
+            else //stops the motors when timer is more than 5 seconds
             {
                 hardware.drive.stop();
             }
@@ -36,15 +37,17 @@ public class Auto
             if (autoTimer.get() >= 5.0 && autoTimer.get() <= 6.0) 
             {
                 hardware.drive.drive(-0.8, 0.9);
+                System.out.println("two");
             }
             else //stops motors after timer reaches 1.9 seconds or more
             {
                 hardware.drive.stop();             
             }
             //will drive forward for .7 seconds
-            if(autoTimer.get() >= 6.0 && autoTimer.get() <= 6.7)
+            if(autoTimer.get() >= 6.0 && autoTimer.get() <= 10.0)
             {
-                hardware.drive.drive(0.5, 0.6);
+                hardware.drive.drive(0.7, 0.8);
+                System.out.println("three");
             }
             else
             {

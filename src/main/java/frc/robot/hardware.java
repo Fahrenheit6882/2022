@@ -5,7 +5,9 @@ import com.ctre.phoenix.motorcontrol.can.*;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Servo;
-import edu.wpi.first.cscore.UsbCamera;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 public class hardware 
 {
@@ -20,7 +22,9 @@ public class hardware
      * Motor Controllers
      */
     public static Drive drive; 
-    public static WPI_VictorSPX climbMotorCtrl = new WPI_VictorSPX(2);
+   // public static WPI_VictorSPX climbMotorCtrl = new WPI_VictorSPX(3);
+   public static CANSparkMax climbMotorCtrl = new CANSparkMax(4, MotorType.kBrushed);
+
     /**
      * Switches 
      */

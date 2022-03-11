@@ -12,7 +12,7 @@ public class Drive {
 
     // speedFactor set up
     int currentFactor = 0;
-    double[] speedFactors = {0.4, 0.8};
+    double[] speedFactors = {0.3, 0.6};
 
     /**
      * Constructor for a tank drive
